@@ -14,8 +14,11 @@
   <module name="TreeWalker">
     <module name="ConstantName">
       <property name="format" value="^[$A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+	  <property name="applyToPrivate" value="false"/>
     </module>
-    <module name="LocalFinalVariableName"/>
+    <module name="LocalFinalVariableName">
+	  <property name="format" value="^[_a-z][a-zA-Z0-9_]*$"/>
+	</module>
     <module name="LocalVariableName"/>
     <module name="MemberName"/>
     <module name="MethodName"/>
@@ -42,19 +45,23 @@
     <module name="WhitespaceAfter"/>
     <module name="WhitespaceAround"/>
     <module name="ModifierOrder"/>
-    <module name="RedundantModifier"/>
+    <module name="RedundantModifier">
+      <property name="tokens" value="VARIABLE_DEF , ANNOTATION_FIELD_DEF , CLASS_DEF , ENUM_DEF, RESOURCE , ANNOTATION_DEF, INTERFACE_DEF, RECORD_DEF "/>
+    </module>
     <module name="AvoidNestedBlocks"/>
     <module name="EmptyBlock"/>
     <module name="NeedBraces"/>
     <module name="LeftCurly">
-      <property name="option" value="nlow"/>
+      <property name="option" value="eol"/>
     </module>
     <module name="RightCurly"/>
     <module name="EmptyStatement"/>
     <module name="EqualsHashCode"/>
     <module name="IllegalInstantiation"/>
     <module name="InnerAssignment"/>
-    <module name="MagicNumber"/>
+    <module name="MagicNumber">
+	  <property name="ignoreAnnotation" value="true"/>
+	</module>
     <module name="MissingSwitchDefault"/>
     <module name="MultipleVariableDeclarations"/>
     <module name="SimplifyBooleanExpression"/>
@@ -62,10 +69,11 @@
     <module name="FinalClass"/>
     <module name="HideUtilityClassConstructor"/>
     <module name="InterfaceIsType"/>
-    <module name="VisibilityModifier"/>
+    <module name="VisibilityModifier">
+	  <property name="protectedAllowed" value="true"/>
+	</module>
     <module name="ArrayTypeStyle"/>
     <module name="FinalParameters"/>
-    <module name="TodoComment"/>
     <module name="UpperEll"/>
   </module>
   <module name="BeforeExecutionExclusionFileFilter">
