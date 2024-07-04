@@ -5,7 +5,9 @@
 
 <module name="Checker">
   
-  <property name="severity" value="warning"/>
+  <module name="Translation">
+    <property name="severity" value="warning"/>
+  </module>
 
   <property name="fileExtensions" value="java, properties, xml"/>
 
