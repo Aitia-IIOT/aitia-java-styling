@@ -12,7 +12,7 @@
   <property name="severity" value="warning"/>
   <property name="fileExtensions" value="java, properties, xml"/>
   <module name="TreeWalker">
-    <module name="SuppressWarnings"/>
+    <module name="SuppressWarningsHolder" />
     <module name="ConstantName">
       <property name="format" value="^[$A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
 	  <property name="applyToPrivate" value="false"/>
@@ -89,4 +89,5 @@
     <property name="format" value="\s+$"/>
     <property name="message" value="Line has trailing spaces."/>
   </module>
+  <module name="SuppressWarningsFilter" />
 </module>
